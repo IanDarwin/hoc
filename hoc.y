@@ -148,7 +148,7 @@ int	indef;
 char	*infile;	/* input file name */
 FILE	*fin;		/* input file pointer */
 char	**gargv;	/* global argument list */
-extern	errno;
+extern	int errno;
 int	gargc;
 
 int c = '\n';	/* global for use by warning() */
@@ -157,7 +157,7 @@ int	backslash(int), follow(int, int, int);
 void	defnonly(char*), run(void);
 void	warning(char*, char*);
 
-yylex(void)		/* hoc6 */
+int yylex(void)		/* hoc6 */
 {
 	while ((c=getc(fin)) == ' ' || c == '\t')
 		;
@@ -245,7 +245,7 @@ yylex(void)		/* hoc6 */
 	}
 }
 
-backslash(int c)	/* get next char with \'s interpreted */
+int backslash(int c)	/* get next char with \'s interpreted */
 {
 	static char transtab[] = "b\bf\fn\nr\rt\t";
 	if (c != '\\')
@@ -256,7 +256,7 @@ backslash(int c)	/* get next char with \'s interpreted */
 	return c;
 }
 
-follow(int expect, int ifyes, int ifno)	/* look ahead for >=, etc. */
+int follow(int expect, int ifyes, int ifno)	/* look ahead for >=, etc. */
 {
 	int c = getc(fin);
 
@@ -332,6 +332,7 @@ main(int argc, char* argv[])	/* hoc6 */
 	return 0;
 }
 
+int
 moreinput(void)
 {
 	if (gargc-- <= 0)
