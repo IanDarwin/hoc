@@ -1,0 +1,19 @@
+proc fib(){
+	a=1
+	b=1
+	c=2
+	d=3
+	sum = a+b+c+d
+	while(d<$1){
+		e=d+c
+		print(e)
+		a=b
+		b=c
+		c=d
+		d=e
+		sum=sum+e
+	}
+	print(sum)
+}
+
+fib(1000)

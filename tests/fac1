@@ -1,0 +1,4 @@
+func fac() if ($1 <= 0) return 1 else return $1 * fac($1-1)
+fac(0)
+fac(7)
+fac(10)

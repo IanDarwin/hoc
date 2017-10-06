@@ -1,0 +1,13 @@
+{
+n=0
+a=0
+b=1
+while(b<10000000){
+	n=n+1
+	c=b
+	b=a+b
+	a=c
+	print(b)
+}
+print(n)
+}
