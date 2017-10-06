@@ -21,8 +21,9 @@ install(char* s, int t, double d)  /* install s in symbol table */
 	Symbol *sp;
 
 	sp = emalloc(sizeof(Symbol));
-	sp->name = emalloc(strlen(s)+1); /* +1 for '\0' */
-	strcpy(sp->name, s);
+	size_t len = strlen(s) + 1;
+	sp->name = emalloc(len); /* +1 for '\0' */
+	strlcpy(sp->name, s, len);
 	sp->type = t;
 	sp->u.val = d;
 	sp->next = symlist; /* put at front of list */
