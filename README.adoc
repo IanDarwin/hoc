@@ -1,0 +1,32 @@
+= HOC - High Order Calculator
+
+hoc is a simple desk calculator, using yacc(1) and lex(1).
+This version of hoc is slightly modified from the one
+found in The Unix Programming Environment, by Brian Kernighan
+and Rob Pike (Addison-Wesley, 1984).
+
+Changes since the book version:
+
+1.  The variable "_" contains the result of the last
+top-level expression evaluation, so you can re-use
+intermediate values without re-typing them.
+
+2.  for statement added, like the one in C,
+except that components may not be empty.
+
+3.  ++ and -- added, but don't work with $i.
+
+4.  Interrupts are caught; use cntrl-D to quit.
+
+5.  % operator added.
+
+6.  +=, -=, etc., added.
+
+7.  \ at end of line eats newline.
+
+8.  results are 15 digits but variable PREC can be
+used to override this.
+
+9.  tabs on output are no longer.
+
+10. asin, acos, sinh, cosh, tanh, erf, erfc
