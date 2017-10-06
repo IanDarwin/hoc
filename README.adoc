@@ -1,6 +1,6 @@
 = HOC - High Order Calculator
 
-hoc is a simple desk calculator, using yacc(1) and lex(1).
+hoc is a simple desk calculator, using yacc(1).
 This version of hoc is slightly modified from the one
 found in The Unix Programming Environment, by Brian Kernighan
 and Rob Pike (Addison-Wesley, 1984).
